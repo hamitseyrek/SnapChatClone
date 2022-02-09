@@ -1,19 +1,19 @@
 //
-//  ViewController.swift
+//  SnapVC.swift
 //  SnapChatClone
 //
-//  Created by Hamit Seyrek on 8.02.2022.
+//  Created by Hamit Seyrek on 9.02.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class SnapVC: UIViewController {
 
+    @IBOutlet weak var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
-
 }
-

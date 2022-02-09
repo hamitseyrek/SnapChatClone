@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E54CB0027B308A8006E035E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CAFF27B308A8006E035E /* AppDelegate.swift */; };
 		5E54CB0227B308A8006E035E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB0127B308A8006E035E /* SceneDelegate.swift */; };
-		5E54CB0427B308A8006E035E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB0327B308A8006E035E /* ViewController.swift */; };
+		5E54CB0427B308A8006E035E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB0327B308A8006E035E /* SignInVC.swift */; };
 		5E54CB0727B308A8006E035E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E54CB0527B308A8006E035E /* Main.storyboard */; };
 		5E54CB0927B308AA006E035E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E54CB0827B308AA006E035E /* Assets.xcassets */; };
 		5E54CB0C27B308AA006E035E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E54CB0A27B308AA006E035E /* LaunchScreen.storyboard */; };
@@ -19,18 +19,26 @@
 		5E54CB1E27B31133006E035E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5E54CB1D27B31133006E035E /* FirebaseDatabase */; };
 		5E54CB2027B31133006E035E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5E54CB1F27B31133006E035E /* FirebaseFirestore */; };
 		5E54CB2227B31133006E035E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5E54CB2127B31133006E035E /* FirebaseStorage */; };
+		5E54CB2427B3C624006E035E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2327B3C624006E035E /* FeedVC.swift */; };
+		5E54CB2627B3C630006E035E /* UploadVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2527B3C630006E035E /* UploadVc.swift */; };
+		5E54CB2827B3C644006E035E /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2727B3C644006E035E /* SettingsVC.swift */; };
+		5E54CB2C27B3CA89006E035E /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2B27B3CA89006E035E /* SnapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E54CAFC27B308A8006E035E /* SnapChatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E54CAFF27B308A8006E035E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E54CB0127B308A8006E035E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5E54CB0327B308A8006E035E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E54CB0327B308A8006E035E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		5E54CB0627B308A8006E035E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E54CB0827B308AA006E035E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E54CB0B27B308AA006E035E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E54CB0D27B308AA006E035E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E54CB1327B309BB006E035E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E54CB2327B3C624006E035E /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		5E54CB2527B3C630006E035E /* UploadVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVc.swift; sourceTree = "<group>"; };
+		5E54CB2727B3C644006E035E /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		5E54CB2B27B3CA89006E035E /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +76,8 @@
 		5E54CAFE27B308A8006E035E /* SnapChatClone */ = {
 			isa = PBXGroup;
 			children = (
-				5E54CAFF27B308A8006E035E /* AppDelegate.swift */,
-				5E54CB0127B308A8006E035E /* SceneDelegate.swift */,
-				5E54CB0327B308A8006E035E /* ViewController.swift */,
+				5E54CB2A27B3C6A8006E035E /* Delegates */,
+				5E54CB2927B3C65C006E035E /* ViewControllers */,
 				5E54CB0527B308A8006E035E /* Main.storyboard */,
 				5E54CB0827B308AA006E035E /* Assets.xcassets */,
 				5E54CB0A27B308AA006E035E /* LaunchScreen.storyboard */,
@@ -78,6 +85,27 @@
 				5E54CB1327B309BB006E035E /* GoogleService-Info.plist */,
 			);
 			path = SnapChatClone;
+			sourceTree = "<group>";
+		};
+		5E54CB2927B3C65C006E035E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E54CB0327B308A8006E035E /* SignInVC.swift */,
+				5E54CB2327B3C624006E035E /* FeedVC.swift */,
+				5E54CB2527B3C630006E035E /* UploadVc.swift */,
+				5E54CB2727B3C644006E035E /* SettingsVC.swift */,
+				5E54CB2B27B3CA89006E035E /* SnapVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5E54CB2A27B3C6A8006E035E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5E54CAFF27B308A8006E035E /* AppDelegate.swift */,
+				5E54CB0127B308A8006E035E /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E54CB0427B308A8006E035E /* ViewController.swift in Sources */,
+				5E54CB2427B3C624006E035E /* FeedVC.swift in Sources */,
+				5E54CB0427B308A8006E035E /* SignInVC.swift in Sources */,
 				5E54CB0027B308A8006E035E /* AppDelegate.swift in Sources */,
+				5E54CB2627B3C630006E035E /* UploadVc.swift in Sources */,
+				5E54CB2C27B3CA89006E035E /* SnapVC.swift in Sources */,
 				5E54CB0227B308A8006E035E /* SceneDelegate.swift in Sources */,
+				5E54CB2827B3C644006E035E /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
