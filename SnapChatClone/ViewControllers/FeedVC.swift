@@ -6,25 +6,48 @@
 //
 
 import UIKit
+import Firebase
 
-class FeedVC: UIViewController {
-
+class FeedVC: UIViewController{
+    
     @IBOutlet weak var tableView: UITableView!
+    let fireStoreDataBase = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        getUserInfo()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    // MARK: - Navigation
+    func getUserInfo () {
+        fireStoreDataBase.collection("userInfo").whereField("email", isEqualTo: Auth.auth().currentUser?.email).getDocuments { snapShots, error in
+            if error == nil {
+                if snapShots?.isEmpty != false && snapShots != nil {
+                    for document in snapShots!.documents {
+                        if let username = document.get("username") as? String {
+                            UserSingleton.sharedInstance.userName = username
+                            UserSingleton.sharedInstance.email = Auth.auth().currentUser!.email as! String
+                            
+                        }
+                    }
+                }
+            } else {
+                let alert = UIAlertController(title: "Error!", message: error?.localizedDescription ?? "Error in here!!", preferredStyle: UIAlertController.Style.alert)
+                let button = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+                alert.addAction(button)
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
 }

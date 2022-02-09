@@ -151,28 +151,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyX-Ks-N1n">
-                                <rect key="frame" x="99" y="399" width="216" height="98"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjG-c4-1Ec">
+                                <rect key="frame" x="144" y="424" width="126" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
                                 <connections>
-                                    <action selector="logoutClicked:" destination="HbR-iv-QEo" eventType="touchUpInside" id="Jea-4B-XwP"/>
+                                    <action selector="logout:" destination="HbR-iv-QEo" eventType="touchUpInside" id="zk5-fV-Phm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rIt-JA-7cT"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
-                        <constraints>
-                            <constraint firstItem="PyX-Ks-N1n" firstAttribute="centerX" secondItem="b83-D5-60h" secondAttribute="centerX" id="DYu-s7-xcK"/>
-                            <constraint firstItem="PyX-Ks-N1n" firstAttribute="leading" secondItem="rIt-JA-7cT" secondAttribute="leading" constant="99" id="Sya-no-Ey5"/>
-                            <constraint firstItem="PyX-Ks-N1n" firstAttribute="centerY" secondItem="b83-D5-60h" secondAttribute="centerY" id="UPf-xX-LZj"/>
-                            <constraint firstItem="PyX-Ks-N1n" firstAttribute="top" secondItem="rIt-JA-7cT" secondAttribute="top" constant="355" id="sbp-Z3-35F"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="s.square" catalog="system" id="1nd-o3-e9o"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignInVCS" modalPresentationStyle="fullScreen" id="Ggb-Lv-xny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8y-fe-MyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,7 +208,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="0Zv-Gw-0uA">
             <objects>
-                <tabBarController id="3cF-Iu-WW0" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="3cF-Iu-WW0" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3SD-2b-Taw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

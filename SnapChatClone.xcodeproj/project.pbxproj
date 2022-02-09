@@ -23,6 +23,7 @@
 		5E54CB2627B3C630006E035E /* UploadVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2527B3C630006E035E /* UploadVc.swift */; };
 		5E54CB2827B3C644006E035E /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2727B3C644006E035E /* SettingsVC.swift */; };
 		5E54CB2C27B3CA89006E035E /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2B27B3CA89006E035E /* SnapVC.swift */; };
+		5E54CB2F27B44741006E035E /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2E27B44741006E035E /* UserSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		5E54CB2527B3C630006E035E /* UploadVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVc.swift; sourceTree = "<group>"; };
 		5E54CB2727B3C644006E035E /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5E54CB2B27B3CA89006E035E /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
+		5E54CB2E27B44741006E035E /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		5E54CAFE27B308A8006E035E /* SnapChatClone */ = {
 			isa = PBXGroup;
 			children = (
+				5E54CB2D27B4471B006E035E /* Models */,
 				5E54CB2A27B3C6A8006E035E /* Delegates */,
 				5E54CB2927B3C65C006E035E /* ViewControllers */,
 				5E54CB0527B308A8006E035E /* Main.storyboard */,
@@ -106,6 +109,14 @@
 				5E54CB0127B308A8006E035E /* SceneDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		5E54CB2D27B4471B006E035E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E54CB2E27B44741006E035E /* UserSingleton.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E54CB2F27B44741006E035E /* UserSingleton.swift in Sources */,
 				5E54CB2427B3C624006E035E /* FeedVC.swift in Sources */,
 				5E54CB0427B308A8006E035E /* SignInVC.swift in Sources */,
 				5E54CB0027B308A8006E035E /* AppDelegate.swift in Sources */,
