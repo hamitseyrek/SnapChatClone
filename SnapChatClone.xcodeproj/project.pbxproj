@@ -24,6 +24,8 @@
 		5E54CB2827B3C644006E035E /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2727B3C644006E035E /* SettingsVC.swift */; };
 		5E54CB2C27B3CA89006E035E /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2B27B3CA89006E035E /* SnapVC.swift */; };
 		5E54CB2F27B44741006E035E /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB2E27B44741006E035E /* UserSingleton.swift */; };
+		5E54CB3127B524F9006E035E /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB3027B524F9006E035E /* FeedTableCell.swift */; };
+		5E54CB3327B528D6006E035E /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E54CB3227B528D6006E035E /* Snap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		5E54CB2727B3C644006E035E /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5E54CB2B27B3CA89006E035E /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
 		5E54CB2E27B44741006E035E /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
+		5E54CB3027B524F9006E035E /* FeedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
+		5E54CB3227B528D6006E035E /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				5E54CB2527B3C630006E035E /* UploadVc.swift */,
 				5E54CB2727B3C644006E035E /* SettingsVC.swift */,
 				5E54CB2B27B3CA89006E035E /* SnapVC.swift */,
+				5E54CB3027B524F9006E035E /* FeedTableCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				5E54CB2E27B44741006E035E /* UserSingleton.swift */,
+				5E54CB3227B528D6006E035E /* Snap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,9 +208,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E54CB2F27B44741006E035E /* UserSingleton.swift in Sources */,
+				5E54CB3327B528D6006E035E /* Snap.swift in Sources */,
 				5E54CB2427B3C624006E035E /* FeedVC.swift in Sources */,
 				5E54CB0427B308A8006E035E /* SignInVC.swift in Sources */,
 				5E54CB0027B308A8006E035E /* AppDelegate.swift in Sources */,
+				5E54CB3127B524F9006E035E /* FeedTableCell.swift in Sources */,
 				5E54CB2627B3C630006E035E /* UploadVc.swift in Sources */,
 				5E54CB2C27B3CA89006E035E /* SnapVC.swift in Sources */,
 				5E54CB0227B308A8006E035E /* SceneDelegate.swift in Sources */,
