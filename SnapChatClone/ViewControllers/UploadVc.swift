@@ -9,11 +9,11 @@ import UIKit
 import Firebase
 
 class UploadVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var uploadImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         uploadImageView.isUserInteractionEnabled = true
@@ -32,7 +32,7 @@ class UploadVc: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         uploadImageView.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func uploadButtonClicked(_ sender: Any) {
         let storage = Storage.storage()
         let storageReferance = storage.reference()
@@ -51,11 +51,34 @@ class UploadVc: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                         let imageUrl = url?.absoluteString
                         
                         let fireStore = Firestore.firestore()
-                        let snapDic = ["imageUrl" : imageUrl!, "owner" : UserSingleton.sharedInstance.userName, "data" : FieldValue.serverTimestamp()] as [String : Any]
-                        fireStore.collection("snaps").addDocument(data: snapDic) { error in
-                            if error == nil {
-                                self.tabBarController?.selectedIndex = 0
-                                self.uploadImageView.image = UIImage(named: "selectImage.png")
+                        fireStore.collection("snaps").whereField("owner", isEqualTo: UserSingleton.sharedInstance.userName).getDocuments { snapShot, err in
+                            if err != nil {
+                                self.makeAlert(title: "Error", message: err!.localizedDescription)
+                            } else {
+                                if snapShot?.isEmpty == false && snapShot != nil {
+                                    for snap in snapShot!.documents {
+                                        let snapID = snap.documentID
+                                        
+                                        if var imageUrlArray = snap.get("imageUrlArray") as? [String] {
+                                            imageUrlArray.append(imageUrl!)
+                                            let imageDic = ["imageUrlArray" : imageUrlArray] as [String : Any]
+                                            fireStore.collection("snaps").document(snapID).setData(imageDic, merge: true, completion: { err2 in
+                                                if err2 == nil {
+                                                    self.tabBarController?.selectedIndex = 0
+                                                    self.uploadImageView.image = UIImage(named: "selectImage.png")
+                                                }
+                                            })
+                                        }
+                                    }
+                                } else {
+                                    let snapDic = ["imageUrlArray" : [imageUrl!], "owner" : UserSingleton.sharedInstance.userName, "data" : FieldValue.serverTimestamp()] as [String : Any]
+                                    fireStore.collection("snaps").addDocument(data: snapDic) { error in
+                                        if error == nil {
+                                            self.tabBarController?.selectedIndex = 0
+                                            self.uploadImageView.image = UIImage(named: "selectImage.png")
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

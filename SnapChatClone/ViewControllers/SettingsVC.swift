@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsVC: UIViewController {
 
@@ -15,17 +16,16 @@ class SettingsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func logout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "toSignInVCS", sender: nil)
+        } catch {
+            let alert = UIAlertController(title: "Error!", message: "User can not sign out!!!", preferredStyle: UIAlertController.Style.alert)
+            let button = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
-    */
-
-    @IBAction func logoutClicked(_ sender: Any) {
-    }
+    
 }

@@ -30,13 +30,13 @@ class FeedVC: UIViewController{
     
     // MARK: - Navigation
     func getUserInfo () {
-        fireStoreDataBase.collection("userInfo").whereField("email", isEqualTo: Auth.auth().currentUser?.email).getDocuments { snapShots, error in
+        fireStoreDataBase.collection("userInfo").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { snapShots, error in
             if error == nil {
-                if snapShots?.isEmpty != false && snapShots != nil {
+                if snapShots?.isEmpty == false && snapShots != nil {
                     for document in snapShots!.documents {
                         if let username = document.get("username") as? String {
                             UserSingleton.sharedInstance.userName = username
-                            UserSingleton.sharedInstance.email = Auth.auth().currentUser!.email as! String
+                            UserSingleton.sharedInstance.email = Auth.auth().currentUser?.email ?? ""
                             
                         }
                     }
