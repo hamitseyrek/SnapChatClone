@@ -195,8 +195,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCX-j5-k6V">
                                                     <rect key="frame" x="102.5" y="36" width="209" height="53"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="53" id="nZG-ov-GGv"/>
-                                                        <constraint firstAttribute="width" constant="209" id="zRB-sT-Pid"/>
+                                                        <constraint firstAttribute="height" constant="53" id="bXa-in-HVw"/>
+                                                        <constraint firstAttribute="width" constant="209" id="sy5-bx-oQe"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -205,16 +205,18 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HEN-ky-HgJ">
                                                     <rect key="frame" x="27" y="105" width="360" height="300"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="360" id="x4A-hN-WtZ"/>
+                                                        <constraint firstAttribute="width" constant="360" id="DGt-D8-Txr"/>
+                                                        <constraint firstAttribute="height" constant="300" id="bVd-jA-eDh"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="jzC-Mi-JZx"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="qCX-j5-k6V" firstAttribute="centerX" secondItem="ia5-0g-Q1V" secondAttribute="centerX" id="4Vx-Js-lpe"/>
-                                                <constraint firstItem="qCX-j5-k6V" firstAttribute="top" secondItem="ia5-0g-Q1V" secondAttribute="topMargin" constant="25" id="9yC-Wq-4Zy"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HEN-ky-HgJ" secondAttribute="bottom" constant="27" id="U0y-W5-IGm"/>
-                                                <constraint firstItem="qCX-j5-k6V" firstAttribute="centerX" secondItem="HEN-ky-HgJ" secondAttribute="centerX" id="ct0-yd-13v"/>
-                                                <constraint firstItem="HEN-ky-HgJ" firstAttribute="top" secondItem="qCX-j5-k6V" secondAttribute="bottom" constant="16" id="mZY-6G-K5Q"/>
+                                                <constraint firstItem="qCX-j5-k6V" firstAttribute="top" secondItem="ia5-0g-Q1V" secondAttribute="topMargin" constant="25" id="0f0-kd-ubT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HEN-ky-HgJ" secondAttribute="bottom" constant="27" id="HPh-AW-DJA"/>
+                                                <constraint firstItem="HEN-ky-HgJ" firstAttribute="top" secondItem="qCX-j5-k6V" secondAttribute="bottom" constant="16" id="Lk3-5n-HWW"/>
+                                                <constraint firstItem="qCX-j5-k6V" firstAttribute="centerX" secondItem="HEN-ky-HgJ" secondAttribute="centerX" id="o1x-kc-ra0"/>
+                                                <constraint firstItem="qCX-j5-k6V" firstAttribute="centerX" secondItem="ia5-0g-Q1V" secondAttribute="centerX" id="osT-en-2AF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -228,10 +230,10 @@
                         <viewLayoutGuide key="safeArea" id="Ze0-CJ-Rh5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="bottom" secondItem="Ze0-CJ-Rh5" secondAttribute="bottom" id="1f5-EI-wuC"/>
-                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="centerX" secondItem="TdK-1t-rfJ" secondAttribute="centerX" id="3Xf-lO-Yc5"/>
-                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="top" secondItem="Ze0-CJ-Rh5" secondAttribute="top" id="GET-oW-Aq8"/>
-                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="leading" secondItem="Ze0-CJ-Rh5" secondAttribute="leading" id="dXZ-Om-cQM"/>
+                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="bottom" secondItem="Ze0-CJ-Rh5" secondAttribute="bottom" id="DuC-lc-wr7"/>
+                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="top" secondItem="Ze0-CJ-Rh5" secondAttribute="top" id="Eh2-kg-p9z"/>
+                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="leading" secondItem="Ze0-CJ-Rh5" secondAttribute="leading" id="WjQ-7K-jxF"/>
+                            <constraint firstItem="g2r-Jy-PJD" firstAttribute="centerX" secondItem="TdK-1t-rfJ" secondAttribute="centerX" id="kUd-Cf-Tos"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="f.square" catalog="system" id="g93-5f-ZEa"/>

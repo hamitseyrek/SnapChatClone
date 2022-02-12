@@ -7,18 +7,20 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
     let fireStoreDataBase = Firestore.firestore()
-    var snapArray : [Snap]
+    var snapArray = [Snap]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        
         getUserInfo()
         getSnapsFromFirestore()
     }
@@ -30,8 +32,7 @@ class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableCell
         cell.userNameLabel.text = snapArray[indexPath.row].username
-        cell.cellImageView.image = snapArray[indexPath.row].i
-        cell.cellImageView.image = UIImage(named: "selectImage")
+        cell.cellImageView.sd_setImage(with: URL(string: snapArray[indexPath.row].imageUrlArray[0]))
         return cell
     }
     
@@ -55,7 +56,7 @@ class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
     }
     
     func getSnapsFromFirestore() {
-        fireStoreDataBase.collection("snaps").order(by: "date", descending: true).addSnapshotListener { snapShots, error in
+        fireStoreDataBase.collection("snaps").order(by: "data", descending: true).addSnapshotListener { snapShots, error in
             if error != nil {
                 self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error in here!!")
             } else {
@@ -65,7 +66,7 @@ class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
                         let documentID = document.documentID
                         if let username = document.get("owner") as? String {
                             if let imageUrlArray = document.get("imageUrlArray") as? [String] {
-                                if let date = document.get("date") as? Timestamp {
+                                if let date = document.get("data") as? Timestamp {
                                     if let diffTime = Calendar.current.dateComponents([.hour], from: date.dateValue(), to: Date()).hour {
                                         if diffTime > 24 {
                                             self.fireStoreDataBase.collection("snaps").document(documentID).delete()
@@ -77,6 +78,7 @@ class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
                             }
                         }
                     }
+                    self.tableView.reloadData()
                 }
             }
         }
