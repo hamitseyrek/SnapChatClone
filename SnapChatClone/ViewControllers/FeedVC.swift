@@ -14,6 +14,8 @@ class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var tableView: UITableView!
     let fireStoreDataBase = Firestore.firestore()
     var snapArray = [Snap]()
+    var selectSnap : Snap?
+    var timeLeft : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +70,10 @@ class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
                             if let imageUrlArray = document.get("imageUrlArray") as? [String] {
                                 if let date = document.get("data") as? Timestamp {
                                     if let diffTime = Calendar.current.dateComponents([.hour], from: date.dateValue(), to: Date()).hour {
-                                        if diffTime > 24 {
+                                        if diffTime >= 24 {
                                             self.fireStoreDataBase.collection("snaps").document(documentID).delete()
                                         }
+                                        self.timeLeft = 24 - diffTime
                                     }
                                     let snap = Snap(username: username, imageUrlArray: imageUrlArray, date: date.dateValue())
                                     self.snapArray.append(snap)
@@ -91,4 +94,17 @@ class FeedVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSnapVCS" {
+            
+            let destinationVC = segue.destination as! SnapVC
+            destinationVC.selectedSnap = self.selectSnap
+            destinationVC.leftTime = self.timeLeft
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectSnap = snapArray[indexPath.row]
+        performSegue(withIdentifier: "toSnapVCS", sender: nil)
+    }
 }
